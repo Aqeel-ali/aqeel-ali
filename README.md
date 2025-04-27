@@ -9,5 +9,5 @@ I'm Aqeel Ali, a fourth-year Computer Science student at the University of Kerba
 ## Get in touch :coffee:
 
 - [Figma](https://www.figma.com/@aqeelalikhalaf)
-- [All Accounts](https://medium.com/@sagarviradiya)
+- [All Accounts](https://linktr.ee/aqeel_ali)
 - [LinkedIn](https://www.linkedin.com/in/aqeel-ali-7a6524245?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app)
