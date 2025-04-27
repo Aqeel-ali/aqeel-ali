@@ -1,0 +1,56 @@
+name: Refresh profile cards
+
+on:
+  schedule:
+    - cron: '17 3 * * *' # Daily at 03:17 UTC / 06:17 Baghdad
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/render_cards.py'
+      - 'profile.json'
+      - 'requirements.txt'
+      - 'assets/fonts/**'
+      - '.github/workflows/refresh-cards.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: profile-cards
+  cancel-in-progress: false
+
+jobs:
+  render:
+    if: github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - name: Install pyftsubset
+        run: python -m pip install -r requirements.txt
+      - name: Refresh contribution JSON
+        env:
+          GH_TOKEN: ${{ secrets.PROFILE_TOKEN || github.token }}
+        run: python scripts/render_cards.py --refresh --data-only
+      - name: Render animated cards
+        env:
+          STATIC: '0'
+        run: python scripts/render_cards.py
+      - name: Commit refreshed data and cards
+        shell: bash
+        run: |
+          git add data/contributions.json cards README.md
+          if git diff --cached --quiet; then
+            echo 'Profile already up to date.'
+            exit 0
+          fi
+          git -c user.name='github-actions[bot]' \
+              -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
+              commit -m 'Refresh contribution data and SVG cards [skip ci]'
+          git push

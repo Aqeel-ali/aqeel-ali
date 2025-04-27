@@ -1,0 +1,14 @@
+{
+  "static": false,
+  "files": [
+    "hero.svg",
+    "link-1.svg",
+    "link-2.svg",
+    "link-3.svg",
+    "activity.svg",
+    "repo-edulab.svg",
+    "repo-Simple_Morty.svg",
+    "repo-Senya_learning.svg",
+    "contributions.svg"
+  ]
+}

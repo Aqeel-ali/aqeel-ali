@@ -1,0 +1,27 @@
+{
+  "username": "Aqeel-ali",
+  "name": "Aqeel Ali Khalaf",
+  "tagline": "Flutter developer & UI/UX designer with 3 years of experience.",
+  "location": "Karbala, Iraq",
+  "website": null,
+  "portrait": null,
+  "brand": {
+    "accent": "#4D97EA",
+    "mint": "#65D6C0",
+    "background": "#0B1423",
+    "surface": "#101F33",
+    "border": "#263B56",
+    "text": "#EDF5FF",
+    "muted": "#A8BAD3"
+  },
+  "links": [
+    {"name": "Figma", "label": "Explore my design work", "url": "https://www.figma.com/@aqeelalikhalaf", "icon": "figma"},
+    {"name": "LinkedIn", "label": "Let’s connect", "url": "https://www.linkedin.com/in/aqeel-ali-7a6524245/", "icon": "linkedin"},
+    {"name": "All accounts", "label": "Find me around the web", "url": "https://linktr.ee/aqeel_ali", "icon": "links"}
+  ],
+  "featured": [
+    {"repo": "edulab", "title": "EduLab", "description": "A Flutter project using Firebase and Riverpod.", "language": "Dart", "category": "FLUTTER / FIREBASE", "icon": "layers"},
+    {"repo": "Simple_Morty", "title": "Simple Morty", "description": "An Android app built around the Rick and Morty public API.", "language": "Kotlin", "category": "ANDROID / API", "icon": "orbit"},
+    {"repo": "Senya_learning", "title": "Senya", "description": "A Croatia travel app exploring Android navigation and MVVM.", "language": "Kotlin", "category": "ANDROID / TRAVEL", "icon": "compass"}
+  ]
+}
